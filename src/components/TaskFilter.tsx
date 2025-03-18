@@ -7,9 +7,9 @@ const TaskFilter = () => {
   const currentFilter = useSelector((state: RootState) => state.todo.filter);
 
   return (
-    <div className="flex flex-row h-full">
+    <div className="flex flex-row h-full justify-center lg:text-sm text-xs">
       <button
-        className={`px-4 py-2 rounded-l-md transition lg:text-sm sm:text-xs ${
+        className={`px-4 py-2 rounded-l-md transition  ${
           currentFilter === "all"
             ? "bg-blue-600 text-white"
             : "bg-gray-200 hover:bg-gray-300"
@@ -19,7 +19,7 @@ const TaskFilter = () => {
         All
       </button>
       <button
-        className={`px-4 py-2 transition lg:text-sm sm:text-xs ${
+        className={`px-4 py-2 transition ${
           currentFilter === "active"
             ? "bg-blue-600 text-white"
             : "bg-gray-200 hover:bg-gray-300"
@@ -29,7 +29,7 @@ const TaskFilter = () => {
         Active
       </button>
       <button
-        className={`px-4 py-2 transition lg:text-sm sm:text-xs ${
+        className={`px-4 py-2 transition ${
           currentFilter === "completed"
             ? "bg-blue-600 text-white"
             : "bg-gray-200 hover:bg-gray-300"
@@ -39,7 +39,7 @@ const TaskFilter = () => {
         Completed
       </button>
       <button
-        className="px-4 py-2 rounded-r-md bg-gray-500 text-white transition lg:text-sm md:text-xs sm:text-xs hover:bg-gray-600"
+        className="px-4 py-2 rounded-r-md bg-gray-500 text-white transition hover:bg-gray-600"
         onClick={() => dispatch(sortTasksByDueDate())}
       >
         Sort

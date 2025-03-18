@@ -26,7 +26,7 @@ const TaskList = () => {
   });
 
   return (
-    <div className="w-full mx-auto bg-white rounded-md">
+    <div className="w-full mx-auto bg-white rounded-md lg:text-sm text-xs">
       {filteredTasks.length === 0 ? (
         <p className="text-center text-gray-500">No tasks available</p>
       ) : (
@@ -36,7 +36,7 @@ const TaskList = () => {
               <ul
                 {...provided.droppableProps}
                 ref={provided.innerRef}
-                className="space-y-3 h-[calc(100vh-335px)] overflow-auto"
+                className="space-y-3 h-[calc(100vh-380px)]  lg:h-[calc(100vh-310px)] overflow-auto"
               >
                 {filteredTasks.map((task, index) => (
                   <Draggable key={task.id} draggableId={task.id} index={index}>

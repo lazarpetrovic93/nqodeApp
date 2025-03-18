@@ -4,13 +4,12 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { selectUser } from "./store/authSlice";
+import useAuth from "./hooks/useAuth";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 
 const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
-  const user = useSelector(selectUser);
+  const { user } = useAuth();
   return user ? children : <Navigate to="/login" replace />;
 };
 

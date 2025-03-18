@@ -1,13 +1,10 @@
 import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { login, selectUser, selectAuthError } from "../store/authSlice";
+import useAuth from "../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user = useSelector(selectUser);
-  const error = useSelector(selectAuthError);
+  const { error, user, login } = useAuth();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -15,7 +12,7 @@ const Login = () => {
     if (!username || !password) {
       return;
     }
-    dispatch(login({ username, password }));
+    login(username, password);
   };
 
   useEffect(() => {
@@ -25,9 +22,9 @@ const Login = () => {
   }, [user, navigate]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white p-6 rounded shadow-md w-96">
-        <h2 className="text-2xl font-bold mb-4">Login</h2>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6 ">
+      <div className="bg-white p-6 rounded shadow-md lg:text-sm text-xs">
+        <h1 className="text-xl lg:text-2xl font-bold mb-4">Login</h1>
 
         <input
           type="text"

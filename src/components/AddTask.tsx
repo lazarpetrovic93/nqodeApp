@@ -24,37 +24,37 @@ const AddTask = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col sm:flex-row items-center gap-4 w-full max-w-xl mx-auto lg:text-sm sm:text-xs"
+      className="flex flex-col lg:flex-row items-center gap-4 w-full lg:text-sm text-xs"
     >
       <input
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="Add a new task..."
-        className="w-full sm:flex-1 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+        className="w-full lg:w-3/4 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
       />
-      <div className="relative w-full sm:w-auto">
+      <div className="flex w-full flex-row gap-4 justify-between lg:justify-start">
         <DatePicker
           selected={dueDate}
           onChange={(date) => setDueDate(date)}
-          className="w-full px-4 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+          className="px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
           placeholderText="Select due date"
           dateFormat="dd/MM/yyyy"
           minDate={new Date()}
         />
-      </div>
-      <button
-        className={`w-full sm:w-auto px-5 py-2 text-white font-medium rounded-md transition
+        <button
+          className={`px-5 py-2 text-white rounded-md transition w-full
           ${
             text && dueDate
               ? "bg-blue-500 hover:bg-blue-600 active:scale-95"
               : "bg-gray-400 cursor-not-allowed"
           }
         `}
-        disabled={!text || !dueDate}
-      >
-        Add Task
-      </button>
+          disabled={!text || !dueDate}
+        >
+          Add Task
+        </button>
+      </div>
     </form>
   );
 };
