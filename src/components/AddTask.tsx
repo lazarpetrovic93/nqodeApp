@@ -24,7 +24,7 @@ const AddTask = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col sm:flex-row items-center gap-4 bg-white shadow-lg rounded-lg w-full max-w-xl mx-auto"
+      className="flex flex-col sm:flex-row items-center gap-4 w-full max-w-xl mx-auto lg:text-sm sm:text-xs"
     >
       <input
         type="text"
