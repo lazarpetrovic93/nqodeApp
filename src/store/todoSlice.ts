@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { setLocalStorage } from '../utils/localStorage';
+import { getLocalStorage, setLocalStorage } from '../utils/localStorage';
 
 export type Task = {
   id: string;
@@ -14,7 +14,7 @@ interface TodoState {
 }
 
 const initialState: TodoState = {
-  tasks: JSON.parse(localStorage.getItem('tasks') || '[]'),
+  tasks: JSON.parse(getLocalStorage('tasks', '[]')),
   filter: "all",
 };
 

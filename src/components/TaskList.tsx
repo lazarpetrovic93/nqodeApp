@@ -7,6 +7,7 @@ import { reorderTasks } from "../store/todoSlice";
 const TaskList = () => {
   const dispatch = useDispatch();
   const tasks = useSelector((state: RootState) => state.todo.tasks);
+  console.log("TASKSSS", tasks);
   const filter = useSelector((state: RootState) => state.todo.filter);
 
   const handleDragEnd = (result: any) => {
