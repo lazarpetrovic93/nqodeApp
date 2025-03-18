@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTask } from "../store/todoSlice";
-import { AppDispatch } from "../store/store";
+import { addTask } from "../store/todoSlice.js";
+import { AppDispatch } from "../store/store.js";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -36,7 +36,7 @@ const AddTask = () => {
       <div className="flex w-full flex-row gap-4 justify-between lg:justify-start">
         <DatePicker
           selected={dueDate}
-          onChange={(date) => setDueDate(date)}
+          onChange={(date: any) => setDueDate(date)}
           className="px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
           placeholderText="Select due date"
           dateFormat="dd/MM/yyyy"

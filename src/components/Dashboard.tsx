@@ -1,8 +1,8 @@
-import useAuth from "../hooks/useAuth";
+import useAuth from "../hooks/useAuth.js";
 import { useNavigate } from "react-router-dom";
-import AddTask from "./AddTask";
-import TaskFilter from "./TaskFilter";
-import TaskList from "./TaskList";
+import AddTask from "./AddTask.js";
+import TaskFilter from "./TaskFilter.js";
+import TaskList from "./TaskList.js";
 
 const Dashboard = () => {
   const { user, logout } = useAuth();

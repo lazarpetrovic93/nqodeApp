@@ -1,14 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../store/store";
-import TaskItem from "./TaskItem";
+import { RootState } from "../store/store.js";
+import TaskItem from "./TaskItem.js";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
-import { reorderTasks } from "../store/todoSlice";
+import { reorderTasks } from "../store/todoSlice.js";
 
 const TaskList = () => {
   const dispatch = useDispatch();
-  const tasks = useSelector((state: RootState) => state.todo.tasks);
+  const tasks = useSelector((state: any) => state.todo.tasks);
   console.log("TASKSSS", tasks);
-  const filter = useSelector((state: RootState) => state.todo.filter);
+  const filter = useSelector((state: any) => state.todo.filter);
 
   const handleDragEnd = (result: any) => {
     if (!result.destination) return;

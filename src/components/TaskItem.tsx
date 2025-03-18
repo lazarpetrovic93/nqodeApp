@@ -1,6 +1,6 @@
-import { Task, toggleTask, deleteTask } from "../store/todoSlice";
+import { Task, toggleTask, deleteTask } from "../store/todoSlice.js";
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "../store/store";
+import { AppDispatch } from "../store/store.js";
 
 interface TaskItemProps {
   task: Task;

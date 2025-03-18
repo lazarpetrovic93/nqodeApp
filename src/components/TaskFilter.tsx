@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../store/store";
-import { setFilter, sortTasksByDueDate } from "../store/todoSlice";
+import { RootState } from "../store/store.js";
+import { setFilter, sortTasksByDueDate } from "../store/todoSlice.js";
 
 const TaskFilter = () => {
   const dispatch = useDispatch();
-  const currentFilter = useSelector((state: RootState) => state.todo.filter);
+  const currentFilter = useSelector((state: any) => state.todo.filter);
 
   return (
     <div className="flex flex-row h-full justify-center lg:text-sm text-xs">
