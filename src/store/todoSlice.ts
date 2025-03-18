@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { setLocalStorage } from '../utils/localStorage';
 
 export type Task = {
   id: string;
@@ -23,18 +24,18 @@ const todoSlice = createSlice({
   reducers: {
     addTask: (state, action: PayloadAction<{ text: string; dueDate?: string }>) => {
       state.tasks.push({ id: crypto.randomUUID(), text: action.payload.text, completed: false, dueDate: action.payload.dueDate });
-      localStorage.setItem('tasks', JSON.stringify(state.tasks));
+      setLocalStorage('tasks', JSON.stringify(state.tasks));
     },
     toggleTask: (state, action: PayloadAction<string>) => {
       const task = state.tasks.find((t) => t.id === action.payload);
       if (task) {
         task.completed = !task.completed;
-        localStorage.setItem('tasks', JSON.stringify(state.tasks));
+        setLocalStorage('tasks', JSON.stringify(state.tasks));
       }
     },
     deleteTask: (state, action: PayloadAction<string>) => {
       state.tasks = state.tasks.filter((task) => task.id !== action.payload);
-      localStorage.setItem('tasks', JSON.stringify(state.tasks));
+      setLocalStorage('tasks', JSON.stringify(state.tasks));
     },
     setFilter: (state, action: PayloadAction<"all" | "active" | "completed">) => {
       state.filter = action.payload;
@@ -43,7 +44,7 @@ const todoSlice = createSlice({
       const { sourceIndex, destinationIndex } = action.payload;
       const [movedTask] = state.tasks.splice(sourceIndex, 1);
       state.tasks.splice(destinationIndex, 0, movedTask);
-      localStorage.setItem('tasks', JSON.stringify(state.tasks));
+      setLocalStorage('tasks', JSON.stringify(state.tasks));
     },
     sortTasksByDueDate: (state) => {
       state.tasks.sort((a, b) => {
@@ -51,7 +52,7 @@ const todoSlice = createSlice({
         if (!b.dueDate) return -1;
         return new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime();
       });
-      localStorage.setItem('tasks', JSON.stringify(state.tasks));
+      setLocalStorage('tasks', JSON.stringify(state.tasks));
     }
   },
 });
