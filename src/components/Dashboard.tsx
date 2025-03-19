@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 import AddTask from "./AddTask.js";
 import TaskFilter from "./TaskFilter.js";
 import TaskList from "./TaskList.js";
+import useDeleteExpiredTasks from "../hooks/useDeleteExpiredTasks.js";
 
 const Dashboard = () => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
-
+  useDeleteExpiredTasks();
   const handleLogout = () => {
     logout();
     navigate("/login");

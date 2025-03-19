@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store.js";
-import { setFilter, sortTasksByDueDate } from "../store/todoSlice.js";
+import { setFilter, sortTasksByDueDate } from "../store/todoSlice";
 
 const TaskFilter = () => {
   const dispatch = useDispatch();

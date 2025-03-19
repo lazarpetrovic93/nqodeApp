@@ -28,7 +28,7 @@ export default function TaskItem({ task }: TaskItemProps) {
       </div>
       <button
         onClick={() => dispatch(deleteTask(task.id))}
-        className="text-red-500 ml-4"
+        className="ml-4 bg-red-500 text-white px-3 py-2 rounded-md transition hover:bg-red-600 active:scale-95 lg:text-sm text-xs"
       >
         Delete
       </button>

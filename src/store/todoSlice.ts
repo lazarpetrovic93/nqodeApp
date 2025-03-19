@@ -53,9 +53,15 @@ const todoSlice = createSlice({
         return new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime();
       });
       setLocalStorage('tasks', JSON.stringify(state.tasks));
-    }
+    },
+    deleteExpiredTasks: (state) => {
+      const now = new Date();
+      state.tasks = state.tasks.filter(task =>
+        !task.dueDate || new Date(task.dueDate) >= now
+      );
+    },
   },
 });
 
-export const { addTask, toggleTask, deleteTask, setFilter, reorderTasks, sortTasksByDueDate } = todoSlice.actions;
+export const { addTask, toggleTask, deleteTask, setFilter, reorderTasks, sortTasksByDueDate, deleteExpiredTasks } = todoSlice.actions;
 export default todoSlice.reducer;
