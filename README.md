@@ -1,54 +1,79 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## **🛠 Prerequisites**
+Ensure you have the correct **Node.js version** installed:
+- **Node.js v18.18.2** *(recommended)*
+- **npm** (comes with Node.js)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+To check your current version, run:
+```sh
+node -v
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## **Installation**
+1. **Clone the repository**  
+   ```sh
+   git clone https://github.com/your-username/todo-app.git
+   cd todo-app
+   ```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. **Install dependencies**  
+   ```sh
+   npm install
+   ```
+
+---
+
+## **🚀 Running the App**
+### **Development Mode**
+To start the development server, run:
+```sh
+npm run dev
 ```
+After starting, the app should be available at:  
+👉 **http://localhost:5173** (or a different port if 5173 is in use)
+
+---
+
+## **🔧 Building for Production**
+To create an optimized production build, run:
+```sh
+npm run build
+```
+To preview the production build:
+```sh
+npm run preview
+```
+
+---
+
+## **🧪 Running Tests**
+The project uses **Vitest** for testing. To run tests:
+```sh
+npm run test
+```
+
+For test coverage:
+```sh
+npm run test:coverage
+```
+
+---
+
+## **📂 Project Structure**
+```
+/src
+  ├── components/       # UI components
+  ├── hooks/            # Custom React hooks
+  ├── store/            # Redux store & slices
+  ├── utils/            # Utility functions
+  ├── App.tsx           # Main application component
+  ├── main.tsx          # App entry point
+  ├── index.css         # Global styles
+/public                 # Static assets
+/vite.config.ts         # Vite configuration
+```
+
+---
+
