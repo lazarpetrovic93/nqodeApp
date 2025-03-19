@@ -4,7 +4,7 @@ import { setFilter, sortTasksByDueDate } from "../store/todoSlice.js";
 
 const TaskFilter = () => {
   const dispatch = useDispatch();
-  const currentFilter = useSelector((state: any) => state.todo.filter);
+  const currentFilter = useSelector((state: RootState) => state.todo.filter);
 
   return (
     <div className="flex flex-row h-full justify-center lg:text-sm text-xs">
