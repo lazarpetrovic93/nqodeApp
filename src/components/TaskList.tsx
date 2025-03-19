@@ -3,14 +3,15 @@ import { RootState } from "../store/store.js";
 import TaskItem from "./TaskItem.js";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import { reorderTasks } from "../store/todoSlice.js";
+import type { DropResult } from "@hello-pangea/dnd";
 
 const TaskList = () => {
   const dispatch = useDispatch();
-  const tasks = useSelector((state: any) => state.todo.tasks);
+  const tasks = useSelector((state: RootState) => state.todo.tasks);
   console.log("TASKSSS", tasks);
-  const filter = useSelector((state: any) => state.todo.filter);
+  const filter = useSelector((state: RootState) => state.todo.filter);
 
-  const handleDragEnd = (result: any) => {
+  const handleDragEnd = (result: DropResult) => {
     if (!result.destination) return;
     dispatch(
       reorderTasks({
@@ -39,7 +40,7 @@ const TaskList = () => {
                 ref={provided.innerRef}
                 className="space-y-3 h-[calc(100vh-380px)]  lg:h-[calc(100vh-310px)] overflow-auto"
               >
-                {filteredTasks.map((task, index) => (
+                {filteredTasks.map((task, index: number) => (
                   <Draggable key={task.id} draggableId={task.id} index={index}>
                     {(provided) => (
                       <li
