@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store.js";
-import { setFilter, sortTasksByDueDate } from "../store/todoSlice";
+import { setFilter, sortTasksByDueDate } from "../store/todoSlice.js";
 
 const TaskFilter = () => {
   const dispatch = useDispatch();
@@ -42,7 +42,7 @@ const TaskFilter = () => {
         className="px-4 py-2 rounded-r-md bg-gray-500 text-white transition hover:bg-gray-600"
         onClick={() => dispatch(sortTasksByDueDate())}
       >
-        Sort
+        Sort By Due Date
       </button>
     </div>
   );

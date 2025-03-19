@@ -59,6 +59,7 @@ const todoSlice = createSlice({
       state.tasks = state.tasks.filter(task =>
         !task.dueDate || new Date(task.dueDate) >= now
       );
+      setLocalStorage('tasks', JSON.stringify(state.tasks));
     },
   },
 });

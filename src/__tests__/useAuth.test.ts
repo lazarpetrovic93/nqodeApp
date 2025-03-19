@@ -1,18 +1,19 @@
 import { renderHook, act } from "@testing-library/react";
 import useAuth from "../hooks/useAuth";
 import * as localStorageUtils from "../utils/localStorage";
+import { describe, beforeEach, afterEach, test, expect, vi } from "vitest";
 
-jest.mock("../utils/localStorage");
+vi.mock("../utils/localStorage");
 
 describe("useAuth hook", () => {
     beforeEach(() => {
-        jest.spyOn(localStorageUtils, "getLocalStorage").mockReturnValue(null);
-        jest.spyOn(localStorageUtils, "setLocalStorage").mockImplementation(() => { });
-        jest.spyOn(localStorageUtils, "removeLocalStorage").mockImplementation(() => { });
+        vi.spyOn(localStorageUtils, "getLocalStorage").mockReturnValue(null);
+        vi.spyOn(localStorageUtils, "setLocalStorage").mockImplementation(() => { });
+        vi.spyOn(localStorageUtils, "removeLocalStorage").mockImplementation(() => { });
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     test("should return initial state with no user", () => {
@@ -23,7 +24,6 @@ describe("useAuth hook", () => {
 
     test("should login with valid credentials", () => {
         const { result } = renderHook(() => useAuth());
-        console.log('result', result)
 
         act(() => {
             result.current.login("lazar", "password123!");

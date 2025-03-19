@@ -24,7 +24,12 @@ const Login = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6 ">
       <div className="bg-white p-6 rounded shadow-md lg:text-sm text-xs">
-        <h1 className="text-xl lg:text-2xl font-bold mb-4">Login</h1>
+        <h1
+          className="text-xl lg:text-2xl font-bold mb-4"
+          data-testid="LoginHeader"
+        >
+          Login
+        </h1>
 
         <input
           type="text"
@@ -44,6 +49,7 @@ const Login = () => {
         {error && <p className="text-sm text-red mb-4">{error}</p>}
 
         <button
+          data-testid="LoginButton"
           onClick={handleLogin}
           className="h-9 flex items-center justify-center w-full text-white font-bold rounded bg-blue-500 hover:bg-blue-600 disabled:bg-gray-400 disabled:cursor-not-allowed"
           disabled={!username || !password}
