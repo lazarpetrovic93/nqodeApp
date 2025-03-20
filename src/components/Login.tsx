@@ -51,7 +51,7 @@ const Login = () => {
         <button
           data-testid="LoginButton"
           onClick={handleLogin}
-          className="h-9 flex items-center justify-center w-full text-white font-bold rounded bg-blue-500 hover:bg-blue-600 disabled:bg-gray-400 disabled:cursor-not-allowed"
+          className="h-9 flex items-center justify-center w-full text-white font-bold rounded bg-secondary hover:bg-primary disabled:bg-disabled disabled:cursor-not-allowed"
           disabled={!username || !password}
         >
           Login

@@ -7,14 +7,17 @@ module.exports = {
         sans: ['"Open Sans"', "sans-serif"],
       },
       colors: {
-        secondary: {
-          DEFAULT: "#A9A29C",
-        },
-        main: {
-          DEFAULT: "#013440",
+        primary: {
+          DEFAULT: "#6C63FF",
         },
         red: {
           DEFAULT: "#FF3737",
+        },
+        secondary: {
+          DEFAULT: "#A89BFF",
+        },
+        disabled: {
+          DEFAULT: "#9ca3af",
         },
       },
     },

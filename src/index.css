@@ -2,3 +2,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.react-datepicker__header {
+    background-color: #A89BFF;
+    color: white;
+}

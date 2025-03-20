@@ -58,7 +58,7 @@ describe("TaskItem Component", () => {
       </Provider>
     );
 
-    const deleteButton = screen.getByText("Delete");
+    const deleteButton = screen.getByTestId("trashIcon");
     await userEvent.click(deleteButton);
 
     expect(store.dispatch).toHaveBeenCalledWith(deleteTask(mockTask.id));
