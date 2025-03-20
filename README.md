@@ -14,8 +14,8 @@ node -v
 ## **Installation**
 1. **Clone the repository**  
    ```sh
-   git clone https://github.com/your-username/todo-app.git
-   cd todo-app
+   git clone https://github.com/lazarpetrovic93/nqodeApp.git
+   cd nqodeApp
    ```
 
 2. **Install dependencies**  
@@ -64,6 +64,7 @@ npm run test:coverage
 ## **📂 Project Structure**
 ```
 /src
+  ├── __tests__/       # Unit tests
   ├── components/       # UI components
   ├── hooks/            # Custom React hooks
   ├── store/            # Redux store & slices
